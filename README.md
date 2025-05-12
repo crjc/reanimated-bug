@@ -1,6 +1,6 @@
 1. `npm i`
 2. `npm run web`
-3. Click "shake"
+3. Click "move"
 4. Observe error in console
 
 ```

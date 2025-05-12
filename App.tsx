@@ -4,7 +4,6 @@ import { Button, StyleSheet, View } from "react-native";
 
 export default function App() {
   const [doAnimate, setDoAnimate] = useState(false);
-
   const handlePress = () => setDoAnimate(true);
 
   return (
@@ -13,19 +12,10 @@ export default function App() {
         style={styles.box}
         animate={{
           backgroundColor: "red",
-          translateX: doAnimate
-            ? [
-                { value: 10, type: "timing", duration: 100 },
-                { value: 0, stiffness: 1000, damping: 10 },
-              ]
-            : undefined,
-        }}
-        onDidAnimate={() => {
-          // error thrown after this
-          setDoAnimate(false);
+          translateX: doAnimate ? 100 : undefined,
         }}
       />
-      <Button title="shake" onPress={handlePress} />
+      <Button title="move" onPress={handlePress} />
     </View>
   );
 }
@@ -37,9 +27,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   box: {
-    width: 100,
-    height: 100,
-    margin: 50,
+    width: 50,
+    height: 50,
+    margin: 10,
     borderRadius: 15,
     borderWidth: 2,
     backgroundColor: "#b58df1",
